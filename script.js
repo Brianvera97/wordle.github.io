@@ -1,18 +1,26 @@
 
+
+let palabra;
+let pista;
+
 let intentos = 6;
-let diccionario = ['GUATA','GUERU','KUARU','HENDU','HECHA','NANDI','JAGUA','ÑANDE','HESAI','POCHY']
 
-let pista= ['Caminar','traer','orinar','escuchar','observar','vacio','perro','nosotros','sano','enojado']
-Math.floor(Math.random() * 10) + 1;
-const palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+let palabras = ['GUATA','GUERU','KUARU','HENDU','HECHA','NANDI','JAGUA','ÑANDE','HESAI','POCHY']
 
+let pistas= ['Caminar','traer','orinar','escuchar','observar','vacio','perro','nosotros','sano','enojado']
 
-console.log(palabra)
+let numeroRandom = Math.floor(Math.random() * palabras.length) 
+console.log(numeroRandom);
+palabra = palabras[numeroRandom]
+console.log(palabra);
+pista = pistas[numeroRandom]
+console.log(pista);
 
 const button = document.getElementById("guess-button");
 button.addEventListener("click", intentar);
 
-
+let divPista = document.getElementById('pista');
+divPista.textContent = pista.toUpperCase();
 
 function intentar(){
     const INTENTO = leerIntento();
